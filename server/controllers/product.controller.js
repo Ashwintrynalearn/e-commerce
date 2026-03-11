@@ -1,8 +1,8 @@
-import product from '../models/product.model.js';
+import Product from '../models/product.model.js';
 
 export const getProducts = async(req,res,next)=>{
     try{
-        const products = await product.find();
+        const products = await Product.find();
         res.status(200).json({
             success: true,
             count: products.length,

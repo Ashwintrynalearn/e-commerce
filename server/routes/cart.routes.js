@@ -1,14 +1,14 @@
 import { Router } from 'express';
-
+import { getCart, addItem, updateItem, removeItem, clearCart } from '../controllers/cart.controller.js';
 const router = Router();
 
-router.get('/', (req, res) => res.send({ title: 'Get Cart Items' }));
+router.get('/', getCart);
 
-router.post('/add', (req, res) => res.send({ title: 'Add Item to Cart' }));
+router.post('/add', addItem );
 
-router.put('/update/:id', (req, res) => res.send({ title: 'Update Cart Item' }));
+router.put('/update/:id', updateItem);
 
-router.delete('/remove/:id', (req, res) => res.send({ title: 'Remove Item from Cart' }));
+router.delete('/remove/:id', removeItem);
 
-router.delete('/clear', (req, res) => res.send({ title: 'Clear Cart' }));
+router.delete('/clear', clearCart);
 export default router;
