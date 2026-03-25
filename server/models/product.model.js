@@ -38,6 +38,9 @@ const productSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
+    embedding:{
+        type: [Number],
+    },
 }, 
 {  timestamps: true, }
 );
